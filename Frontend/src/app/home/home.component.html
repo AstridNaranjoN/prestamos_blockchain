@@ -1,0 +1,48 @@
+<bc-menu></bc-menu>
+<div class="row">    
+    <div class="side-menu">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Hamburger -->
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a (click)="misBonos()">
+                            <span class="glyphicon glyphicon-tags"></span> Mis Bonos</a>
+                    </li>
+                    <li>
+                        <a (click)="emitirBono()">
+                            <span class="glyphicon glyphicon-check"></span> Emitir Bono</a>
+                    </li>
+                  
+                    <li>
+                        <a (click)="consultarBonos()">
+                            <span class="glyphicon glyphicon-search"></span> Consultar Bonos</a>
+                    </li>
+                    <!--<li>
+                        <a (click)="pagarBonos()">
+                            <span class="glyphicon glyphicon-eur"></span> Pagar Bonos</a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="side-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

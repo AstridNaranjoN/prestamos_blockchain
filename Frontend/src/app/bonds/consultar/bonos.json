@@ -1,0 +1,16 @@
+[
+    {"creationDate":"31/12/2017", "amount": 1000000, "status":1, "installments": 1
+    },
+    {"creationDate":"31/12/2017", "amount": 1000000, "status":1, "installments": 1
+    },
+    {"creationDate":"31/12/2017", "amount": 1000000, "status":1, "installments": 1
+    },
+    {"creationDate":"31/12/2017", "amount": 1000000, "status":0, "installments": 1
+    },
+    {"creationDate":"31/12/2017", "amount": 1000000, "status":0, "installments": 1
+    },
+    {"creationDate":"31/12/2017", "amount": 1000000, "status":1, "installments": 1
+    },
+    {"creationDate":"31/12/2017", "amount": 1000000, "status":1, "installments": 1
+    }
+]

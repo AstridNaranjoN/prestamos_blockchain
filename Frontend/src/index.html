@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Prestamos BlockChain</title>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="forms.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('main.js').catch(function (err) { console.error(err); });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $('.navbar-toggle').click(function () {
+        $('.navbar-nav').toggleClass('slide-in');
+        $('.side-body').toggleClass('body-slide-in');
+        $('#search').removeClass('in').addClass('collapse').slideUp(200);
+
+        /// uncomment code for absolute positioning tweek see top comment in css
+        //$('.absolute-wrapper').toggleClass('slide-in');
+
+      });
+
+      // Remove menu for searching
+      $('#search-trigger').click(function () {
+        $('.navbar-nav').removeClass('slide-in');
+        $('.side-body').removeClass('body-slide-in');
+
+        /// uncomment code for absolute positioning tweek see top comment in css
+        //$('.absolute-wrapper').removeClass('slide-in');
+
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <bc-app><img style="position: absolute;left: 40%;top: 30%;" src="./Spinner.gif"></bc-app>
+</body>
+
+</html>

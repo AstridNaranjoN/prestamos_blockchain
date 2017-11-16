@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default" style="margin-bottom:0% !important">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand" style="color:#be5238">Prestamos BlockChain</span>
+        </div>
+        <div *ngIf="googleService.isSignedIn" class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a style="color:#be5238">{{name}}</a>
+                </li>
+                <li>
+                    <img src="{{image}}" style="width:50px; height:50px; border-radius: 100px">
+                </li>
+                <li>
+                    <a class="btn btn-default btn-outline btn-circle collapsed"  style="color:#be5238" data-toggle="collapse" aria-expanded="false" aria-controls="nav-collapse1"
+                        (click)="logout()">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

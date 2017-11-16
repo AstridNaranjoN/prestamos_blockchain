@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-md-5 col-md-offset-2">
+        <div class="form-area">
+            <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;">Adquirir Bono</h3>
+            
+            <div class="form-group">
+                {{labels.adquirirBono.fecha}}
+                <input type="datetime" class="form-control" id="fecha" name="fecha" [ngModel]="bond.creationDate | date:'yyyy-MM-dd HH:mm:ss'" placeholder="Fecha" readonly>
+            </div>
+            <div class="form-group">
+                {{labels.adquirirBono.valor}}
+                <input type="number" class="form-control" id="valor" name="valor" [(ngModel)]="bond.amount" placeholder="Valor" readonly>
+            </div>
+            <div class="form-group">
+                {{labels.adquirirBono.interes}}
+                <input type="text" class="form-control" id="interes" name="interes" placeholder="Interés" readonly value="10%">
+            </div>
+            <div class="form-group">
+                {{labels.adquirirBono.plazo}}
+                <input type="number" class="form-control" id="plazo" name="plazo" [(ngModel)]="bond.installments" placeholder="Plazo" value="1" readonly>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-2 col-sm-offset-3">
+                    <button type="button" id="submit" name="submit" class="btn btn-secondary pull-right"(click)="cancelar()">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        Cancelar</button>
+                </div>
+                <div class="col-sm-2 col-sm-offset-3">
+                    <button type="button" id="submit" name="submit" class="btn btn-primary pull-right" (click) = "adquirirBono()">
+                        <span class="glyphicon glyphicon-bookmark"></span>
+                        Adquirir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

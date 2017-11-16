@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="col-md-5 col-md-offset-2">
+    <div class="form-area">
+      <br style="clear:both">
+      <h3 style="margin-bottom: 25px; text-align: left;">Pago de Bonos</h3>
+
+      <div *ngIf="bonusSelected">Por favor selecciona un bono</div>
+
+      <div *ngIf="bonusSelected == false" class="panel panel-default mb-3">
+        <div class="panel-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-eur" aria-hidden="true"></span> Valor: {{bond.amount}}</li>
+
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> Interes: 10%</li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Fecha: {{bond.putDate | date:'yyyy-MM-dd HH:mm:ss'}}</li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Total: {{totalPay}}</li>
+          </ul>
+          <div class="form-group row" class="col-sm-2 col-sm-offset-3">
+            <button type="button" id="cancel" name="cancel" class="btn btn-secondary pull-right" (click)="goToBondslist()">
+                <span class="glyphicon glyphicon-remove"></span>
+              Cancelar
+            </button>
+          </div>
+          <div class="form-group row" class="col-sm-2 col-sm-offset-3">
+            <button type="button" id="submit" name="submit" class="btn btn-primary pull-right" (click)="pagarBono()">
+                <span class="glyphicon glyphicon-usd"></span>
+              Pagar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

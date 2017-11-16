@@ -1,0 +1,87 @@
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+<div class="container">
+    <div class="col-md-8 col-md-offset-1">
+        <div class="form-area">
+            <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;">Consultar Bonos - {{option}}</h3>
+
+            <div class="container">
+                <div class="form-group row">
+                    <div class="col-md-2 col-sm-offset-1">
+                        <button type="button" id="emitidos" name="emitidos" (click)="find('emitidos')" class="btn btn-primary pull-right">
+                            <span class="glyphicon glyphicon-edit"></span>
+                            Bonos disponibles</button>
+                    </div>
+                    <div class="col-md-2 col-sm-offset-1">
+                        <button type="button" id="adquiridos" name="adquiridos" (click)="find('adquiridos')" class="btn btn-primary pull-right">
+                            <span class="glyphicon glyphicon-bookmark"></span>
+                            Bonos adquiridos</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table id="mytable" class="table table-bordred table-striped text-center">
+                            <thead>
+                                <th>{{currentLabels.fecha}}</th>
+                                <th>{{currentLabels.valor}}</th>
+                                <th>{{currentLabels.estado}}</th>
+                                <th *ngIf="option === 'adquiridos'">
+                                    {{currentLabels.prestatario}}
+                                </th>
+                                <th *ngIf="option === 'emitidos'">
+                                    {{currentLabels.prestamista}}
+                                </th>
+                                <th *ngIf="option === 'adquiridos'">
+                                    {{currentLabels.fechaPago}}
+                                </th>
+                                <th *ngIf="option === 'adquiridos'">Pagar</th>
+                                <th *ngIf="option === 'emitidos'">Adquirir</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let bond of bonds">
+                                    <td *ngIf="option === 'emitidos'">
+                                        {{bond.creationDate | date:'yyyy-MM-dd HH:mm:ss'}}
+                                    </td>
+                                    <td *ngIf="option === 'adquiridos'">
+                                        {{bond.putDate | date:'yyyy-MM-dd HH:mm:ss'}}
+                                    </td>
+
+                                    <td>{{"$ " + bond.amount }}</td>
+                                    <td>{{bond.status}}</td>
+                                    
+                                    <td *ngIf="option === 'adquiridos'">
+                                        {{bond.moneyLenderId}}
+                                    </td>
+                                    <td *ngIf="option === 'emitidos'">
+                                        {{bond.moneyLenderId}}
+                                    </td>
+                                    
+                                    <td *ngIf="option === 'adquiridos' && bond.status =='PAYMENT'">
+                                        {{bond.paymentDate | date:'yyyy-MM-dd HH:mm:ss'}}
+                                    </td>
+                                    <td *ngIf="option === 'adquiridos' && bond.status !=='PAYMENT'">
+                                       
+                                    </td>
+                                    <td *ngIf="option === 'adquiridos'">
+                                        <a (click)="irPagar(bond)" *ngIf="bond.status !=='PAYMENT'" target="Ir a Pagar">
+                                            Ir
+                                        </a>
+                                    </td>
+                                    <td *ngIf="option === 'emitidos'">
+                                            <a (click)="irAdquirir(bond)" >Adquirir</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

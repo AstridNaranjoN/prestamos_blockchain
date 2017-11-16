@@ -1,0 +1,33 @@
+<bc-menu></bc-menu>
+<div class="container fluid">
+    <div class="col-md-6">
+        <div class="form-area">
+            <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;">Registrate</h3>
+            <div class="form-group">
+                {{labels.registro.nombres}}
+                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="user.name" placeholder="{{labels.registro.nombres}}"
+                    required>
+            </div>
+            <div class="form-group">
+                {{labels.registro.email}}
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" placeholder="{{labels.registro.email}}"
+                    required>
+            </div>
+            <div class="form-group">
+                {{labels.registro.password}}
+                <input type="password" class="form-control" id="pass" name="pass" [(ngModel)]="user.password" placeholder="{{labels.registro.password}}"
+                    required>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-2 col-sm-offset-3">
+                    <button type="button" id="cancel" name="cancel" class="btn btn-primary pull-right" (click)="cancel()">Cancelar</button>
+                </div>
+                <div class="col-sm-2 col-sm-offset-3">
+                    <button type="button" id="save" name="save" class="btn btn-primary pull-right" (click)="save()">Guadar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

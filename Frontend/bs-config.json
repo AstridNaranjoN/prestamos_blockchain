@@ -1,0 +1,9 @@
+{
+  "port": 3081,
+  "server": {
+    "baseDir": "src",
+    "routes": {
+    "/node_modules": "node_modules"
+    }
+  }
+}
