@@ -1,3 +1,6 @@
 prestamosbc
 -Contiene el servidor web para enlazar el hyperledger con los microservicios
 -Tiene que estar en el mismo servidor que el hyperledger
+
+hyperledger
+-El contrato está en la carpeta hyperledger\fabric-samples\fabcar
