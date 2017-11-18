@@ -1,0 +1,7 @@
+Configurar los redireccionamentos 
+
+PrestamosBlockChainV1-master\src\app\util\app\googleAuth.service.ts
+redirect_uri:'http://prestamosbc.ddns.net:3081/intermediate'
+
+
+Configurar las credenciales para la autenticación

@@ -10,3 +10,8 @@ prestamosbc
 -Para iniciar ubicarse en la carpeta prestamosbc y ejecutar
     npm install
     npm run
+
+
+Tutoriales
+http://hyperledger-fabric.readthedocs.io/en/latest/write_first_app.html
+https://www.codementor.io/olatundegaruba/nodejs-restful-apis-in-10-minutes-q0sgsfhbd
