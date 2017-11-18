@@ -1,6 +1,12 @@
+hyperledger
+-Para iniciar el blockchain ejecutar \hyperledger\fabric-samples\fabcar\restartFabric.sh
+-El contrato de Préstamos Blockchain está en \hyperledger\fabric-samples\chaincode\fabcar\fabcar.go
+-La base de datos se guarda en el volúmen de docker \hyperledger\fabric-samples\basic-network\couchdb-data
+-El blockchain levanta una red básica dockerizada y está parametrizada en \hyperledger\fabric-samples\basic-network\docker-compose.yml
+
 prestamosbc
 -Contiene el servidor web para enlazar el hyperledger con los microservicios
 -Tiene que estar en el mismo servidor que el hyperledger
-
-hyperledger
--El contrato está en la carpeta hyperledger\fabric-samples\fabcar
+-Para iniciar ubicarse en la carpeta prestamosbc y ejecutar
+    npm install
+    npm run

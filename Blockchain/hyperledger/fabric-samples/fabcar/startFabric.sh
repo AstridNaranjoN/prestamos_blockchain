@@ -25,7 +25,7 @@ cd ../basic-network
 docker-compose -f ./docker-compose.yml up -d cli
 
 # cuando se hagan cambios en el código fuente hay que cambiar CHAINCODE_VERSION para que no saque error de certificado
-CHAINCODE_VERSION="8.4"
+CHAINCODE_VERSION="8.8"
 
 docker exec -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" cli peer chaincode install -n fabcar -v ${CHAINCODE_VERSION} -p github.com/fabcar
 docker exec -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" cli peer chaincode upgrade -o orderer.example.com:7050 -C mychannel -n fabcar -v ${CHAINCODE_VERSION} -c '{"Args":[""]}' -P "OR ('Org1MSP.member','Org2MSP.member')"

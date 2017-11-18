@@ -213,7 +213,7 @@ func (s *SmartContract) queryBondsByOwner(APIstub shim.ChaincodeStubInterface, a
 		}
 		owner := args[0]
 		//queryString := fmt.Sprintf("{\"selector\":{\"moneyLenderId\":\"%s\", \"creationDate\":{\"$ne\":\"asdf\"}}, \"sort\": [{\"creationDate\": \"asc\"}]}", owner)
-		queryString := fmt.Sprintf("{\"selector\":{\"moneyLenderId\":\"%s\"}, \"sort\":[\"moneyLenderId:string\"], \"fields\":[\"moneyLenderId\"]}", owner)
+		queryString := fmt.Sprintf("{\"selector\":{\"moneyLenderId\":\"%s\"}}", owner)
 		queryResults, err := getQueryResultForQueryString(APIstub, queryString)
 		if err != nil {
 			return shim.Error(err.Error())
